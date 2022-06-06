@@ -1,0 +1,219 @@
+
+/*Reset*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*css INICIO PARA FIRST MOBILE*/
+body{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    font-size: 1rem;
+}
+
+nav{
+    padding: 10px;
+    grid-area: menu;
+    background:#1e88e5;
+    color: white;
+    
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+}
+select{
+
+    width: 100%;
+    height: 30px;
+    border: 0;
+    border-radius: 5px;
+}
+
+header{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color:#e8eaf6;
+    grid-area: header;
+
+}
+section{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    background-color: white;
+    grid-area: sig-pagina;
+
+    
+}
+.opciones{
+    display: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+main{
+    grid-area:seccion-principal ;
+    padding: 10px;
+    
+}
+
+footer{
+    text-align: center;
+    grid-area: pie-de-pagina;
+    background: #283593;
+    color: white;
+    padding: 10px;
+}
+footer img{
+    margin-top: 20px;
+}
+
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 0.5fr 0.5fr 4fr 0.5fr 0.5fr;
+    grid-template-areas: 
+    "menu"
+    "header"
+    "seccion-principal"
+    "sig-pagina"
+    "pie-de-pagina";
+
+}
+
+td{
+    border:1px solid rgb(233, 228, 228) ;
+    color: #4fc3f7;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+.card-grid{
+
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+
+.item-card-1{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 320px;
+    height: 400px;
+    background: white;
+    border: 1px solid rgb(224, 220, 220);
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+    margin: 15px;
+
+}
+.item-card-2,.item-card-3,.item-card-4,.item-card-5,.item-card-6,.item-card-7,.item-card-8{
+    display: none;
+}
+
+footer p{
+    font-weight: bold;
+    
+}
+
+.img-card img{
+    
+    height:100%;
+    width: 100%;
+    
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color:#4fc3f7;
+    padding: 8px 15px;
+    margin-bottom: 20px;
+}
+
+a:hover{
+    background-color:#283593;
+    transition:1s ease ;
+}
+
+/*css FIN PARA FIRST MOBILE*/
+
+/*MEDIA QUERIES Y CSS PARA VERSION SOBRE 576PX*/
+
+@media (min-width:576px){
+    .container{
+        grid-template-areas: 
+        "menu header"
+        "menu seccion-principal"
+        "pie-de-pagina sig-pagina";
+        grid-template-columns: 1fr 5fr;
+        grid-template-rows: 0.5fr 12fr 0.5fr;
+    }
+    .imagen-menu{
+        display: none;
+    }
+
+    .menu{
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    select{
+        width: 90%;
+    }
+    .card-grid{
+       flex-direction: row;
+       flex-wrap: wrap;
+       align-items: flex-start;
+       align-content: flex-start;
+       justify-content: space-evenly;
+       width: 100%;
+       overflow-y: scroll;
+   
+    }
+    .item-card-1,.item-card-2,.item-card-3,.item-card-4,.item-card-5,
+        .item-card-6,.item-card-7,.item-card-8{
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 320px;
+            height: 400px;
+            background: white;
+            border: 1px solid rgb(224, 220, 220);
+            box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+            margin: 15px;
+    }
+    .opciones{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+    }
+    .opciones p{
+       
+        height: 50px;
+        margin-top: 30px;
+    }
+    section{
+        align-items: flex-end;
+    }
+}
+
